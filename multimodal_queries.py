@@ -76,12 +76,52 @@ def generate_model_response(encoded_image, user_query, assistant_prompt="You are
     # Return the model's response
     return response['choices'][0]['message']['content']
 
-user_query = "Describe the photo"
+#user_query = "Describe the photo"
 
-for i in range(len(encoded_images)):
-    image = encoded_images[i]
+#for i in range(len(encoded_images)):
+#    image = encoded_images[i]
 
-    response = generate_model_response(image, user_query)
+#    response = generate_model_response(image, user_query)
 
     # Print the response with a formatted description
-    print(f"Description for image {i + 1}: {response}")
+#    print(f"Description for image {i + 1}: {response}")
+
+# ============================================
+# RUN TESTS
+# ============================================
+print("="*50)
+print("TESTING generate_model_response FUNCTION")
+print("="*50)
+# Test 1: Basic Image Description
+print("\n=== Test 1: Basic Image Description ===")
+test1_query = "Describe this image"
+# Call generate_model_response with encoded_images[0] and test1_query
+# Store result in test1_response
+test1_response = generate_model_response(encoded_images[0], test1_query)
+print(f"Query: {test1_query}")
+print(f"Response: {test1_response}\n")
+# Test 2: Specific Object Detection
+print("=== Test 2: Specific Object Detection ===")
+test2_query = "What is the person wearing?"
+# Call generate_model_response with encoded_images[1] and test2_query
+test2_response = generate_model_response(encoded_images[1], test2_query)
+print(f"Query: {test2_query}")
+print(f"Response: {test2_response}\n")
+# Test 3: Scene Analysis
+print("=== Test 3: Scene Analysis ===")
+test3_query = "What weather condition is shown in this image?"
+# Call generate_model_response with encoded_images[2] and test3_query
+test3_response = generate_model_response(encoded_images[2], test3_query)
+print(f"Query: {test3_query}")
+print(f"Response: {test3_response}\n")
+# Test 4: Text Recognition
+print("=== Test 4: Text Recognition ===")
+test4_query = "What is the serving size listed on this label?"
+# Call generate_model_response with encoded_images[3] and test4_query
+test4_response = generate_model_response(encoded_images[3], test4_query)
+print(f"Query: {test4_query}")
+print(f"Response: {test4_response}\n")
+# Final message
+print("="*50)
+print("All tests completed! ✓")
+print("="*50)
