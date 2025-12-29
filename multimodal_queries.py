@@ -76,7 +76,7 @@ def generate_model_response(encoded_image, user_query, assistant_prompt="You are
     # Return the model's response
     return response['choices'][0]['message']['content']
 
-    user_query = "Describe the photo"
+user_query = "Describe the photo"
 
 for i in range(len(encoded_images)):
     image = encoded_images[i]
