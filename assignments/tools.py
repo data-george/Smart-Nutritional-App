@@ -4,12 +4,12 @@ class TitleCaser:
     @tool("Title case a string")
     def enforce(text: str) -> str:
         """
-        Enforce Title Case on input text.
+        Convert input text to Title Case.
         - Input: arbitrary string
-        - Output: string in Title Case
-        - Must not print; must return the transformed string.
+        - Output: same string in Title Case
         """
-        # TODO: Implement a basic Title Case transformation
-        # Instruction: Split on spaces, capitalize each word, join with spaces, return.
-        raise NotImplementedError
+        if not text or text.strip() == "":
+            return ""
+        words = text.split()
+        return " ".join(w.capitalize() for w in words)
 
