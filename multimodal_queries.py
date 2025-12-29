@@ -26,3 +26,14 @@ encoded_images = []
 
 for url in image_urls: 
     encoded_images.append(base64.b64encode(requests.get(url).content).decode("utf-8"))
+
+model_id = "meta-llama/llama-3-2-90b-vision-instruct"
+project_id = "skills-network"
+params = TextChatParameters()
+
+model = ModelInference(
+    model_id=model_id,
+    credentials=credentials,
+    project_id=project_id,
+    params=params
+)
